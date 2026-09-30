@@ -6,7 +6,7 @@ Route a prompt to **OpenAI Codex (gpt-5.6 `sol` / `luna` / `terra`)** from Claud
 
 ```
 /plugin marketplace add 0-to-1-Labs/claude-marketplace
-/plugin install codex-dispatch@0to1-labs
+/plugin install codex-dispatch@0-to-1-labs
 ```
 
 Requires the [`codex`](https://github.com/openai/codex) CLI installed and authenticated:
