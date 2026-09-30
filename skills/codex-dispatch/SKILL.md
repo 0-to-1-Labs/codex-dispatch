@@ -16,7 +16,7 @@ Raw request from the user: **$ARGUMENTS**
 
 1. **Parse leading modifiers, then the prompt.** Inspect the first one or two whitespace-delimited tokens of the request. In any order:
    - A token that is `rw`, `write`, or `--rw` sets **write mode** (Codex may edit files under the current directory).
-   - A token that is `sol`, `astra`, or `luna` sets the model variant. `terra` is a deprecated alias for `sol`.
+   - A token that is `sol`, `astra`, or `luna` sets the model variant.
    - Everything after the recognized modifier token(s) is the prompt.
    - Defaults if a modifier is absent: variant `sol`, and **read-only** (Codex can inspect files but cannot modify them).
 

@@ -54,8 +54,6 @@ claude plugin update codex-dispatch@0-to-1-labs
 | `astra` | `gpt-6-astra` | Most capable, most expensive — hard analysis, architecture     |
 | `luna`  | `gpt-6-luna`  | Fastest and cheapest — easy, well-scoped tasks                 |
 
-`terra` still works as a deprecated alias for `sol` (the balanced tier, like the old `terra`) and prints a note.
-
 ### Modes
 
 - **Default (read-only):** Codex inspects files but only returns advice. Nothing is modified.
@@ -98,7 +96,7 @@ If OpenAI renames a variant, edit the `case` map in `skills/codex-dispatch/dispa
 
 Breaking changes for existing users:
 
-- **Models moved to the GPT-6 family.** `sol` → `gpt-6.1-sol`, new `astra` → `gpt-6-astra`, `luna` → `gpt-6-luna`. `terra` is a deprecated alias for `sol`, the balanced tier. The old descriptions were inverted (`sol` was the flagship, `luna` the cheapest); they now match OpenAI's catalog.
+- **Models moved to the GPT-6 family.** `sol` → `gpt-6.1-sol`, new `astra` → `gpt-6-astra`, `luna` → `gpt-6-luna`. `terra` was removed and is now rejected as an unknown variant; `astra` is the deepest tier. The old descriptions were inverted (`sol` was the flagship, `luna` the cheapest); they now match OpenAI's catalog.
 - **Default sandbox is `read-only`.** Use `rw` (or `--rw`) for edits. The old `ro` modifier is now the default and is no longer needed.
 - **`danger-full-access` is gated** behind `CODEX_DISPATCH_ALLOW_FULL_ACCESS=1`.
 - **`/codex` is the only entry point.** The separate `codex-dispatch` skill entry is gone; Claude no longer triggers a dispatch on its own.
