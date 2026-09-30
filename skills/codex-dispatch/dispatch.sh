@@ -11,7 +11,7 @@
 #   sol    gpt-6.1-sol   Codex's default; near-Astra quality at lower cost. Default here.
 #   astra  gpt-6-astra   most capable and most expensive; hard analysis, architecture
 #   luna   gpt-6-luna    fastest and cheapest; easy, well-scoped tasks
-#   terra  deprecated alias for astra (prints a note)
+#   terra  deprecated alias for sol, the balanced tier (prints a note)
 #
 # Options (each has an env var fallback; the flag wins):
 #   --rw                  workspace-write sandbox: Codex may edit files under $PWD
@@ -76,8 +76,8 @@ if [ -z "$model" ]; then
     astra) model="gpt-6-astra" ;;
     luna)  model="gpt-6-luna" ;;
     terra)
-      echo "[codex-dispatch] note: 'terra' is deprecated; using astra (gpt-6-astra). Pick 'astra' or 'sol' next time." >&2
-      variant="astra"; model="gpt-6-astra" ;;
+      echo "[codex-dispatch] note: 'terra' is deprecated; using sol (gpt-6.1-sol), the balanced tier. Pick 'sol' next time, or 'astra' for the most capable model." >&2
+      variant="sol"; model="gpt-6.1-sol" ;;
   esac
 fi
 label="${variant:-custom}"
